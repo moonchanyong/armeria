@@ -133,6 +133,13 @@ public final class ServerPort implements Comparable<ServerPort> {
     }
 
     /**
+     * Return the {@code port} this {@code localAddress} uses.
+     */
+    public int port() {
+        return localAddress.getPort();
+    }
+
+    /**
      * Returns whether there is a {@link SessionProtocol} which is over TLS.
      */
     public boolean hasTls() {
