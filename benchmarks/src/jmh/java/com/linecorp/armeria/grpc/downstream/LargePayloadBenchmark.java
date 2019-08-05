@@ -98,7 +98,7 @@ public class LargePayloadBenchmark {
         final ServerPort httpPort = server.activePorts().values().stream()
                                           .filter(ServerPort::hasHttp).findAny()
                                           .get();
-        final String url = "gproto+http://127.0.0.1:" + httpPort.localAddress().getPort() + '/';
+        final String url = "gproto+http://127.0.0.1:" + httpPort.port() + '/';
         binaryProxyClient = Clients.newClient(url, BinaryProxyStub.class);
     }
 

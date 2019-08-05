@@ -162,10 +162,10 @@ public abstract class AbstractThriftOverHttpTest {
 
         httpPort = server.activePorts().values().stream()
                          .filter(ServerPort::hasHttp).findAny().get()
-                         .localAddress().getPort();
+                         .port();
         httpsPort = server.activePorts().values().stream()
                           .filter(ServerPort::hasHttps).findAny().get()
-                          .localAddress().getPort();
+                          .port();
     }
 
     @AfterClass

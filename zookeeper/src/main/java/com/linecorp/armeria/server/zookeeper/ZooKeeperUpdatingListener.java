@@ -111,7 +111,7 @@ public class ZooKeeperUpdatingListener extends ServerListenerAdapter {
             assert server.activePort().isPresent();
             endpoint = Endpoint.of(server.defaultHostname(),
                                    server.activePort().get()
-                                         .localAddress().getPort());
+                                         .port());
         }
         client.start();
         final String key = endpoint.host() + '_' + endpoint.port();

@@ -156,7 +156,7 @@ public abstract class ServerRuleDelegate {
     public int port(SessionProtocol protocol) {
         return server().activePorts().values().stream()
                        .filter(p1 -> p1.hasProtocol(protocol)).findAny()
-                       .flatMap(p -> Optional.of(p.localAddress().getPort()))
+                       .flatMap(p -> Optional.of(p.port()))
                        .orElseThrow(() -> new IllegalStateException(protocol + " port not open"));
     }
 

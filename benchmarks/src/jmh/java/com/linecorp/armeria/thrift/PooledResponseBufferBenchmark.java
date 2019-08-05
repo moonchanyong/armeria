@@ -152,10 +152,10 @@ public class PooledResponseBufferBenchmark {
                                           .filter(ServerPort::hasHttp).findAny()
                                           .get();
         pooledClient = Clients.newClient(
-                "tbinary+http://127.0.0.1:" + httpPort.localAddress().getPort() + "/a",
+                "tbinary+http://127.0.0.1:" + httpPort.port() + "/a",
                 HelloService.Iface.class);
         unpooledClient = Clients.newClient(
-                "tbinary+http://127.0.0.1:" + httpPort.localAddress().getPort() + "/b",
+                "tbinary+http://127.0.0.1:" + httpPort.port() + "/b",
                 HelloService.Iface.class);
     }
 

@@ -47,7 +47,7 @@ public class DownstreamSimpleBenchmark extends SimpleBenchmarkBase {
         final ServerPort httpPort = server.activePorts().values().stream()
                                           .filter(ServerPort::hasHttp).findAny()
                                           .get();
-        return httpPort.localAddress().getPort();
+        return httpPort.port();
     }
 
     @Override

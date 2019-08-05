@@ -55,7 +55,7 @@ public abstract class RetryingHttpClientBase {
         final ServerPort httpPort = server.activePorts().values().stream()
                                           .filter(ServerPort::hasHttp).findAny()
                                           .get();
-        return "h2c://127.0.0.1:" + httpPort.localAddress().getPort();
+        return "h2c://127.0.0.1:" + httpPort.port();
     }
 
     @Benchmark

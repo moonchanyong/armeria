@@ -87,7 +87,7 @@ public class ArmeriaCompressionConfigurationTest {
 
     private String newUrl() {
         assert server != null;
-        return server.activePort().map(p -> "http://127.0.0.1:" + p.localAddress().getPort())
+        return server.activePort().map(p -> "http://127.0.0.1:" + p.port())
                      .orElseThrow(() -> new RuntimeException("Failed to get an active port."));
     }
 

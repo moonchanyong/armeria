@@ -74,7 +74,7 @@ public class HttpServerBenchmark {
                                           .filter(ServerPort::hasHttp).findAny()
                                           .get();
         httpClient = Clients.newClient("none+" + protocol.uriText() + "://127.0.0.1:" +
-                                       httpPort.localAddress().getPort() + '/',
+                                       httpPort.port() + '/',
                                        HttpClient.class);
     }
 

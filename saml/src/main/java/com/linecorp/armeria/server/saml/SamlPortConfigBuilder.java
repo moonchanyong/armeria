@@ -90,7 +90,7 @@ final class SamlPortConfigBuilder {
         }
 
         // Do not set a port if the port number is 0 which means that the port will be automatically chosen.
-        final int port = serverPort.localAddress().getPort();
+        final int port = serverPort.port();
         if (isValidPort(port)) {
             setPortIfAbsent(port);
         }

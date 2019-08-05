@@ -1514,7 +1514,7 @@ public final class ServerBuilder {
             boolean found = false;
             // Do not check the port number 0 because a user may want his or her server to be bound
             // on multiple arbitrary ports.
-            if (p.localAddress().getPort() > 0) {
+            if (p.port() > 0) {
                 for (int i = 0; i < distinctPorts.size(); i++) {
                     final ServerPort port = distinctPorts.get(i);
                     if (port.localAddress().equals(p.localAddress())) {

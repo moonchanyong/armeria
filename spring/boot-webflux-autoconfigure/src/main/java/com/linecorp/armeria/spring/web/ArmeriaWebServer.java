@@ -80,7 +80,7 @@ public final class ArmeriaWebServer implements WebServer {
                                                              p.localAddress().getAddress().getAddress()))
                                   .findFirst();
                     assert port.isPresent() : "the primary port doest not exist.";
-                    this.port = port.get().localAddress().getPort();
+                    this.port = port.get().port();
                 }
                 isRunning = true;
             }

@@ -138,7 +138,7 @@ public class BraveServiceIntegrationTest extends ITHttpServer {
     protected String url(String path) {
         final int port = server.activePorts().values().stream()
                                .filter(p1 -> p1.hasProtocol(SessionProtocol.HTTP)).findAny()
-                               .flatMap(p -> Optional.of(p.localAddress().getPort()))
+                               .flatMap(p -> Optional.of(p.port()))
                                .orElseThrow(() -> new IllegalStateException("Port not open"));
         return "http://127.0.0.1:" + port + path;
     }

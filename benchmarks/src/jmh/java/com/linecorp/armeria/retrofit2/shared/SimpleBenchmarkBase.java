@@ -55,7 +55,7 @@ public abstract class SimpleBenchmarkBase {
         final ServerPort httpPort = server.activePorts().values().stream()
                                           .filter(ServerPort::hasHttps).findAny()
                                           .get();
-        return "https://127.0.0.1:" + httpPort.localAddress().getPort();
+        return "https://127.0.0.1:" + httpPort.port();
     }
 
     @Benchmark

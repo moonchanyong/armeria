@@ -104,7 +104,7 @@ public class ArmeriaSslConfigurationTest {
         assert server != null;
         final int port = server.activePorts().values().stream()
                                .filter(p1 -> p1.hasProtocol(protocol)).findAny()
-                               .flatMap(p -> Optional.of(p.localAddress().getPort()))
+                               .flatMap(p -> Optional.of(p.port()))
                                .orElseThrow(() -> new IllegalStateException(protocol + " port not open"));
         return protocol.uriText() + "://127.0.0.1:" + port;
     }
