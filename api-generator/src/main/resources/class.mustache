@@ -1,0 +1,9 @@
+public class AnnotatedService {
+   {{#methods}}
+
+   @{{method}}("{{path}}")
+    public HttpResponse {{operationId}}(ServiceRequestContext ctx, HttpRequest req) {
+        // Use the context and request inside a method.
+    }
+   {{/methods}}
+}
